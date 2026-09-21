@@ -3,7 +3,7 @@ import axios from 'axios';
 function LeadTable({ leads, onStatusChange, onDelete }) {
   const handleStatusUpdate = async (id, newStatus) => {
     try {
-      await axios.put(`http://localhost:5005/api/leads/${id}`, { status: newStatus });
+      await axios.put(`${import.meta.env.VITE_API_URL}/api/leads/${id}`, { status: newStatus });
       onStatusChange();
     } catch (err) {
       console.error(err);
@@ -12,7 +12,7 @@ function LeadTable({ leads, onStatusChange, onDelete }) {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5005/api/leads/${id}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/leads/${id}`);
       onDelete();
     } catch (err) {
       console.error(err);

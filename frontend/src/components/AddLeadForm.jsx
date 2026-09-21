@@ -16,7 +16,7 @@ function AddLeadForm({ onLeadAdded }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5005/api/leads', formData);
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/leads`, formData);
       setFormData({ email: '', phone: '', status: 'new', assignedTo: '' });
       onLeadAdded();
     } catch (err) {
