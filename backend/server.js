@@ -27,7 +27,4 @@ app.post("/api/login", (req, res) => {
 
 app.use("/api/leads", leadRoutes);
 
-const PORT = 5005;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+module.exports = app;
